@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "FullstackDesafioApplication",
+            "request": "launch",
+            "mainClass": "net.javaguides.springboot.FullstackDesafioApplication",
+            "projectName": "fullstack-desafio"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-FullstackDesafioApplication<fullstack-desafio>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.fullstack_desafio.FullstackDesafioApplication",
+            "projectName": "fullstack-desafio",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
