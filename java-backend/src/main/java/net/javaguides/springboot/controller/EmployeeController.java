@@ -3,6 +3,7 @@ package net.javaguides.springboot.controller;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import net.javaguides.springboot.exception.ResourceNotFoundException;
 import net.javaguides.springboot.model.Employee;
@@ -31,6 +33,15 @@ public class EmployeeController {
     // get all employees
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
+	@RequestParam(required = false) String nome,
+	@RequestParam(required = false) String cargo,
+	if (firstName != null && !firstName.isEmpty() && cargo != null && !cargo.isEmpty()) {
+        return employeeRepository.findByCargoContainingIgnoreCase(cargo); 
+	    } else if (firstName != null && !firstName.isEmpty()) {
+	        return employeeRepository.findByFirstNameContainingIgnoreCase(firstName);
+	    } else if (cargo != null && !cargo.isEmpty()) {
+	        return employeeRepository.findByCargoContainingIgnoreCase(cargo);
+	    } else {
         return employeeRepository.findAll();
     }
 
