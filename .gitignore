@@ -1,5 +1,5 @@
 # Maven
-/target/
+target/
 node_modules
 pom.xml.tag
 pom.xml.releaseBackup
@@ -9,7 +9,9 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar # Maven Wrapper JAR (binário)
+.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+mysql_data/
 
 # IDEs
 .vscode/        # VS Code settings (user specific)

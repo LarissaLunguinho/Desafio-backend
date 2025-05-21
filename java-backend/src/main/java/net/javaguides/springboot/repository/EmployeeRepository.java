@@ -9,6 +9,6 @@ import net.javaguides.springboot.model.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long>{
-    List<Employee> findByFirstNameContainingIgnoreCase(String firstName);
+    List<Employee> findByNomeContainingIgnoreCase(String nome);
     List<Employee> findByCargoContainingIgnoreCase(String cargo);
 }
